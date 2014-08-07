@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<head>
+	<title>LiKiT</title>
+	<meta charset="UTF-8">
+	<style>
+		#like-container{
+			position: absolute;
+			top:50%;
+			right:50%;
+			border: 1px solid grey;
+			width:50px;
+			height: 50px;
+			color: lightblue;
+			background-color: black;
+			line-height:50px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id = 'like-container'><div id = 'like-button'>LIKE</div></div>
+
+</body>
+
+<script type='text/javascript' src='static/js/jquery-1.11.1.min.js'></script>
+<script>
+	$(function(){
+		$('#like-container').bind('mouseover', function(){
+			$(this).css({'background-color': 'grey'})
+			// alert('fuck')
+		})
+		$('#like-container').bind('mouseout', function(){
+			$(this).css({'background-color': 'black'})
+			// alert('fuck')
+		})
+		$('#like-container').bind('click', function(){
+			$('#like-button').html('LiKiT').css({'color':'pink'})
+			// alert('fuck')
+		})
+	});
+</script>
+
+</html>
