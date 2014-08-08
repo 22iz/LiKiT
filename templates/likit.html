@@ -2,41 +2,109 @@
 <head>
 	<title>LiKiT</title>
 	<meta charset="UTF-8">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<style>
+		html, body{
+			width: 100%;
+			height: 100%;
+		}
+
 		#like-container{
 			position: absolute;
-			top:50%;
-			right:50%;
-			border: 1px solid grey;
-			width:50px;
-			height: 50px;
-			color: lightblue;
-			background-color: black;
-			line-height:50px;
+			top:47.75%;
+			left:48.5%;
+			/*margin: 0 auto;*/
+			/*border: 2px solid grey;*/
+			width: 47px;
+			height: 25px;
+			/*color: gold;*/
+			/*font:italic bold 25px/20px arial,sans-serif;*/
+			background-color: #54C0D1;
+			line-height: 25px;
 			cursor: pointer;
+			/*-webkit-transition: opacity 2s ease-out;*/
+			text-align: center;
+			font-variant: small-caps;
+			font-weight: bold;
+
+			/*padding:8px 15px 8px 14px;*/
+			font-family:'Open Sans',Arial,sans-serif;
+			border:0px;
+			color:#ffffff;
+			box-shadow:0 1px 2px rgba(64, 64, 64, 0.1);
+			-webkit-transition:all 0.4s ease 0s;
+			-moz-transition:all 0.4s ease 0s;
+			-ms-transition:all 0.4s ease 0s;
+			-o-transition:all 0.4s ease 0s;
+			transition:all 0.4s ease 0s;
 		}
+
+/*		a.moredemo {
+			background: #54C0D1;
+			padding:8px 15px 8px 14px;
+			font-family:'Open Sans',Arial,sans-serif;
+			border:0px;
+			color:#ffffff;
+			cursor:pointer;
+			display:inline-block;
+			font-size:14px;
+			outline:medium none;
+			text-align:center;
+			text-decoration:none;
+			text-transform:uppercase;
+			box-shadow:0 1px 2px rgba(64, 64, 64, 0.1);
+			-webkit-transition:all 0.4s ease 0s;
+			-moz-transition:all 0.4s ease 0s;
+			-ms-transition:all 0.4s ease 0s;
+			-o-transition:all 0.4s ease 0s;
+			transition:all 0.4s ease 0s;   
+		}
+		a.moredemo:hover {
+			background:#333333;
+		}*/
 	</style>
 </head>
 
 <body>
 
-	<div id = 'like-container'><div id = 'like-button'>LIKE</div></div>
+	<div id = 'like-container'>LIKE</div>
 
 </body>
 
 <script type='text/javascript' src='static/js/jquery-1.11.1.min.js'></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script>
 	$(function(){
+		setInterval($('#like-container').css({'background-color': '#000000'}), 100)
 		$('#like-container').bind('mouseover', function(){
-			$(this).css({'background-color': 'grey'})
+			$(this).css({'background-color': '#333333'})
+			$(this).css({'color': '#54C0D1'})
+			// $(this).css({'opacity': 0.7})
 			// alert('fuck')
 		})
 		$('#like-container').bind('mouseout', function(){
-			$(this).css({'background-color': 'black'})
+			$(this).css({'background-color': '#54C0D1'})
+			$(this).css({'color': '#ffffff'})
+			// $(this).css({'opacity': 1})
 			// alert('fuck')
 		})
-		$('#like-container').bind('click', function(){
-			$('#like-button').html('LiKiT').css({'color':'pink'})
+		$('#like-container').bind('click', function(e){
+			var eT = e.target;
+			for(el in eT){
+				console.log(el, eT[el]);
+			}
+			alert()
+			var thisLike = $(this).html();
+			if(thisLike == 'LIKE'){
+				$(this).html('LiKiT');
+			}
+			else{
+				$(this).html('LIKE');
+			}
 			// alert('fuck')
 		})
 	});
